@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta httpcontent="text/html", charset = utf-8>
-        <link rel="stylesheet" href="styles.css">
-        <title>Barter Now</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset = utf-8>
+        
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}"/>
         <style>
+             * {
+                box-sizing: border-box;
+            }
+
+            .give{
+                width: 50%;
+                float: left;
+            }
+
+            .need{
+                width: 50%;
+                float:left;
+            }
             body {background-color:rgb(243, 229, 212); }
             h1 {text-align: center; }
+
         </style>
         <script src ="app.js"></script>
     </head>
@@ -14,8 +29,34 @@
     <body>
         <h1>Welcome to Barter Now for nCoV19</h1>
 
-        <h2>HTML Forms</h2>
-        <form action="/action_page.php">
+        <div class="give">
+            <fieldset>
+                <legend>Give</legend>
+                <ul>
+                    <li>Toilet Paper</li>
+                    <li>Hand Sanitizer</li>
+                    <li>Isproponal Alcohol</li>
+                    <li>Kitchen Paper</li>
+                    <li>Thermometer</li>
+                </ul>
+            </fieldset>
+        </div>
+
+        <div class="need">
+            <fieldset>
+            <legend>Need</legend>
+            <ul>
+                <li>Toilet Paper</li>
+                <li>Hand Sanitizer</li>
+                <li>Isproponal Alcohol</li>
+                <li>Kitchen Paper</li>
+                <li>Thermometer</li>
+            </ul>
+            </fieldset>
+        </div>
+
+        <h2>Enter what you need or what you have</h2>
+        <form action="/action_page.php" method="get">
             <label for="uname">User Name</label>
             <input type="text" id="uname" name="uname" >
             <label for="zip">Zipcode</label>

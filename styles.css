@@ -1,3 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+.give{
+    width: 50%;
+    float: left;
+}
+
+.need{
+    width: 50%;
+    float:left;
+}
+
+
+
+
 .container{
     display: grid;
     grid-template-columns: 1fr 3fr;
