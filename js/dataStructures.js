@@ -85,7 +85,13 @@ class User {
 }
 
 // TODO: Complete list of items
-var itemsList = [{name: 'toiletPaper', photo: '../public/images/image.jpg'}, {name: 'Clorox', photo: 'path/to/img'}];
+var itemsList = [{ name: 'Toilet Paper', photo: '../public/images/image.jpg' },
+    { name: 'Clorox', photo: 'path/to/img' },
+    { name: 'Hand Sanitizer', photo: 'path/to/img' },
+    { name: 'Detergent', photo: 'path/to/img' },
+    { name: 'Gloves', photo: 'path/to/img' },
+    { name: 'Canned beans', photo: 'path/to/img' }];
+
 
 //  Initialization of Maps
 var needsMap = new Map();
@@ -97,11 +103,30 @@ for (let item in itemsList) {
 }
 
 //  Add Users with inventory
-hasMap.get('toiletPaper').add({name: 'Cam', location: 'Texas'});
+hasMap.get('Toilet Paper').add({ name: 'Cam', location: 'Texas' });
+hasMap.get('Clorox').add({ name: 'Cam', location: 'Texas' });
+needsMap.get('Hand Sanitizer').add({ name: 'Cam', location: 'Texas' });
 
-console.log(hasMap.get('toiletPaper').contains({name: 'Cam', location: 'Texas'}));
-console.log(hasMap);
-console.log(needsMap);
+hasMap.get('Hand Sanitizer').add({ name: 'Felipe', location: 'Texas' });
+needsMap.get('Clorox').add({ name: 'Felipe', location: 'Texas' });
+
+hasMap.get('Detergent').add({ name: 'Lifang', location: 'Texas' });
+hasMap.get('Clorox').add({ name: 'Lifang', location: 'Texas' });
+needsMap.get('Toilet Paper').add({ name: 'Lifang', location: 'Texas' });
+
+hasMap.get('Gloves').add({ name: 'Ryan', location: 'Texas' });
+hasMap.get('Canned beans').add({ name: 'Ryan', location: 'Texas' });
+needsMap.get('Detergent').add({ name: 'Ryan', location: 'Texas' });
+
+function checkHas() {
+    for (let item in itemsList) {
+        console.log(itemsList[item].name, hasMap.get(itemsList[item].name).contains({ name: 'Ryan', location: 'Texas' }));
+    }
+}
+
+checkHas();
+//console.log(hasMap);
+//console.log(needsMap);
 
 
 // Exporting Objects
