@@ -118,15 +118,37 @@ hasMap.get('Gloves').add({ name: 'Ryan', location: 'Texas' });
 hasMap.get('Canned beans').add({ name: 'Ryan', location: 'Texas' });
 needsMap.get('Detergent').add({ name: 'Ryan', location: 'Texas' });
 
-function checkHas() {
+function checkHas(user) {
+    s = user.name + " has: ";
     for (let item in itemsList) {
-        console.log(itemsList[item].name, hasMap.get(itemsList[item].name).contains({ name: 'Ryan', location: 'Texas' }));
+        if (hasMap.get(itemsList[item].name).contains(user)){
+            s = s+ itemsList[item].name + ", ";
+        }
     }
+    console.log(s);
 }
 
-checkHas();
-//console.log(hasMap);
-//console.log(needsMap);
+function userNeeds(user) {
+    s = user.name + " needs: ";
+    
+    for (let item in itemsList) {
+        if (needsMap.get(itemsList[item].name).contains(user)){
+            s = s+ itemsList[item].name + ", ";
+        }
+    }
+    console.log(s);
+}
+
+
+
+checkHas({ name: 'Cam', location: 'Texas' });
+userNeeds({ name: 'Cam', location: 'Texas' });
+checkHas({ name: 'Lifang', location: 'Texas' });
+userNeeds({ name: 'Lifang', location: 'Texas' });
+checkHas({ name: 'Felipe', location: 'Texas' });
+userNeeds({ name: 'Felipe', location: 'Texas' });
+checkHas({ name: 'Ryan', location: 'Texas' });
+userNeeds({ name: 'Ryan', location: 'Texas' });
 
 
 // Exporting Objects
