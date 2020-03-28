@@ -6,17 +6,13 @@
     <fieldset>
     <legend>Give</legend>
         <div class='cards'>
-    <div class="card">
-       ...
-    </div>
-    <div class="card">
-        ...
-    </div>
-    <div class="card">
-        ...
-    </div>
-
-</div>
+            {{#each itemList}}
+                <div class="card">
+                    <img class="thumbnail" src={{{this.photo}}}>
+                    {{this.displayName}}
+                </div>
+            {{/each}}
+        </div>
     </fieldset>
 </div>
 
@@ -24,22 +20,13 @@
     <fieldset>
     <legend>Need</legend>
         <div class='cards'>
-    <div class="card">
-        ...
-    </div>
-    <div class="card">
-        ...
-    </div>
-    <div class="card">
-        ...
-    </div>
-    <div class="card">
-        ...
-    </div>
-    <div class="card">
-        ...
-    </div>
-</div>
+            {{#each itemList}}
+                <div class="card">
+                    <img class="thumbnail" src={{{this.photo}}}>
+                    {{this.displayName}}
+                </div>
+            {{/each}}
+        </div>
     </fieldset>
 </div>
 

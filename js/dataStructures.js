@@ -85,7 +85,7 @@ class User {
 }
 
 // TODO: Complete list of items
-var itemsList = [{name: 'toiletPaper', photo: '../public/images/image.jpg'}, {name: 'Clorox', photo: 'path/to/img'}];
+var itemsList = [{name: 'toiletPaper', displayName: 'Toilet Paper', photo: 'images/toilet_paper.jpg'}, {name: 'Clorox', displayName: 'Clorox', photo: 'path/to/img'}];
 
 //  Initialization of Maps
 var needsMap = new Map();
