@@ -1,8 +1,11 @@
-<link rel="stylesheet" type="text/css" href="styles.css"/>
+
 
 <h1>Welcome to BarterNow nCoV19</h1>
 
-<div class='cards'>
+<div class="give">
+    <fieldset>
+    <legend>Give</legend>
+        <div class='cards'>
     <div class="card">
        ...
     </div>
@@ -14,8 +17,13 @@
     </div>
 
 </div>
+    </fieldset>
+</div>
 
-<div class='cards'>
+<div class="need">
+    <fieldset>
+    <legend>Need</legend>
+        <div class='cards'>
     <div class="card">
         ...
     </div>
@@ -32,3 +40,25 @@
         ...
     </div>
 </div>
+    </fieldset>
+</div>
+
+
+
+
+
+
+<h2>Enter what you need or what you have</h2>
+    <form action="/action_page.php" method="get">
+        <label for="uname">User Name</label>
+        <input type="text" id="uname" name="uname" >
+        <label for="zip">Zipcode</label>
+        <input type="text" id="zip" name="zip">
+        <label for="action">Action: </label>
+        <select id="action" name="action">
+            <option value="give">Give</option>
+            <option value="barter">Barter</option>
+            <option value="need">Need</option>
+        </select>
+        <input type="submit">
+</form>
