@@ -27,18 +27,19 @@ app.get('/', (req,res) => {
     }
 
     let context = {};
+    context.itemList = dataStructure.itemsList;
     context.list = qParams;
     context.type = 'GET';
-    res.render('getpost', context);
+    res.render('home', context);
 });
 
 //  user can post what they have
 app.post('/', (req,res) => {
     var postParams = [];
     for(var p in req.query){
-        postParmas.push({'name':p, 'value':req.query[p]});
+        postParams.push({'name':p, 'value':req.query[p]});
     }
-    var bodyParms = [];
+    var bodyParams = [];
     for(var item in req.body){
         bodyParams.push({'name': item, 'value': req.body[item]});
     }

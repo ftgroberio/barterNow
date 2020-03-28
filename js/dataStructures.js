@@ -109,5 +109,6 @@ console.log(needsMap);
 module.exports = {
     LinkedList: LinkedList,
     needsMap: needsMap,
-    hasMap: hasMap
+    hasMap: hasMap,
+    itemsList: itemsList
 };
