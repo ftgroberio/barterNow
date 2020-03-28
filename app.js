@@ -17,17 +17,33 @@ app.use(express.static(path.join(__dirname, '/public')));
 //  Routes
 
 app.get('/', (req,res) => {
-    let context = {};
+    var qParams = [];
+    for(var p in req.query){
+        context.push({'name': p, 'value':req.query[p]});
+    }
 
+    let context = {};
+    context.list = qParams;
+    context.type = 'GET';
     app.render(home);
 });
 
+//user can post what they have 
 app.post('/', (req,res) => {
+    var postParams = [];
+    for(var p in req.query){
+        postParmas.push({'name':p, 'value':req.query[p]});
+    }
+    var bodyParms = [];
+    for(var item in req.body){
+        bodyParams.push({'name': item, 'value': req.body[item]});
+    }
+
     let context = {};
 
-    // Do Work
-
-
+    context.queryList = postParams;
+    context.bodyList = bodyParams;
+    context.type = 'POST';
     res.send(JSON.stringify(context));
 });
 
