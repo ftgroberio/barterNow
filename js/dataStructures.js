@@ -97,11 +97,27 @@ for (let item in itemsList) {
 }
 
 //  Add Users with inventory
-//hasMap.get('toilet_paper').add({name: 'Cam', location: 'Texas'});
+hasMap.get('toilet_paper').add({ name: 'Cam', location: 'Texas' });
+hasMap.get('clorox').add({ name: 'Cam', location: 'Texas' });
+needsMap.get('hand_sanitizer').add({ name: 'Cam', location: 'Texas' });
+
+hasMap.get('hand_sanitizer').add({ name: 'Felipe', location: 'Texas' });
+needsMap.get('clorox').add({ name: 'Felipe', location: 'Texas' });
+
+hasMap.get('water').add({ name: 'Lifang', location: 'Texas' });
+hasMap.get('clorox').add({ name: 'Lifang', location: 'Texas' });
+needsMap.get('toilet_paper').add({ name: 'Lifang', location: 'Texas' });
+
+hasMap.get('gloves').add({ name: 'Ryan', location: 'Texas' });
+hasMap.get('toilet_paper').add({ name: 'Ryan', location: 'Texas' });
+hasMap.get('face_mask').add({ name: 'Ryan', location: 'Texas' });
+needsMap.get('water').add({ name: 'Ryan', location: 'Texas' });
+
 
 //console.log(hasMap.get('toilet_paper').contains({name: 'Cam', location: 'Texas'}));
-console.log(hasMap);
-console.log(needsMap);
+//console.log(hasMap);
+//console.log(needsMap);
+console.log(hasMap.get('toilet_paper'));
 
 
 // Exporting Objects
