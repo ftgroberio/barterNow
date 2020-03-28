@@ -5,6 +5,9 @@ const handlebars = require('express-handlebars').create({defaultLayout:'main'});
 const bodyParser = require('body-parser');
 const path = require('path');
 
+//  Project .js exports
+var   dataStructure = require('./js/dataStructure');
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -29,7 +32,7 @@ app.get('/', (req,res) => {
     res.render('getpost', context);
 });
 
-//user can post what they have 
+//  user can post what they have
 app.post('/', (req,res) => {
     var postParams = [];
     for(var p in req.query){

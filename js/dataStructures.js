@@ -8,8 +8,8 @@ class LinkedList {
         return this._length;
     }
 
-    add (value) {
-        let node = new Node(value),
+    add (user) {
+        let node = new Node(user),
             currentNode = this.head;
 
         // List empty
@@ -32,12 +32,12 @@ class LinkedList {
         return node;
     }
 
-    remove (id) {
+    remove (user) {
         let current = this.head,
             prev;
 
         while (current) {
-            if (current.data.id === id) {
+            if (current.data === user) {
                 if (!prev) {
                     this.head = current.next;
                 }
@@ -58,7 +58,16 @@ class LinkedList {
         return false;
     }
 
+    contains (user) {
+        let current = this.head;
 
+        while (current) {
+            if (current.data === user) {return true;}
+            current = current.next;
+        }
+
+        return false;
+    }
 }
 
 class Node {
@@ -68,10 +77,10 @@ class Node {
     }
 }
 
-class Offer {
-    constructor(id, name) {
-        this.id = id;
+class User {
+    constructor(name, location) {
         this.name = name;
+        this.location = location;
     }
 }
 
@@ -111,3 +120,10 @@ console.log(findMatch("toiletPaper", "isopropyl"));
 // Confirm complete removal (expect false)
 mapData.get("toiletPaper").get("isopropyl").remove(124);
 console.log(findMatch("toiletPaper", "isopropyl"));
+
+
+// Exporting Objects
+module.exports = {
+    LinkedList: LinkedList,
+
+};
