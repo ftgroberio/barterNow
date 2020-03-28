@@ -62,7 +62,7 @@ class LinkedList {
         let current = this.head;
 
         while (current) {
-            if (current.data === user) {return true;}
+            if (current.data.name === user.name && current.data.location === user.location) {return true;}
             current = current.next;
         }
 
@@ -99,8 +99,7 @@ for (let item in itemsList) {
 //  Add Users with inventory
 hasMap.get('toiletPaper').add({name: 'Cam', location: 'Texas'});
 
-
-console.log(hasMap.get('toiletPaper'));
+console.log(hasMap.get('toiletPaper').contains({name: 'Cam', location: 'Texas'}));
 console.log(hasMap);
 console.log(needsMap);
 
