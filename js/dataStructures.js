@@ -1,3 +1,5 @@
+const itemsList = require('./itemsList.js');
+
 class LinkedList {
     constructor () {
         this._length = 0;
@@ -84,8 +86,6 @@ class User {
     }
 }
 
-// TODO: Complete list of items
-var itemsList = [{name: 'toiletPaper', displayName: 'Toilet Paper', photo: 'images/toilet_paper.jpg'}, {name: 'Clorox', displayName: 'Clorox', photo: 'path/to/img'}];
 
 //  Initialization of Maps
 var needsMap = new Map();
@@ -97,9 +97,9 @@ for (let item in itemsList) {
 }
 
 //  Add Users with inventory
-hasMap.get('toiletPaper').add({name: 'Cam', location: 'Texas'});
+//hasMap.get('toilet_paper').add({name: 'Cam', location: 'Texas'});
 
-console.log(hasMap.get('toiletPaper').contains({name: 'Cam', location: 'Texas'}));
+//console.log(hasMap.get('toilet_paper').contains({name: 'Cam', location: 'Texas'}));
 console.log(hasMap);
 console.log(needsMap);
 
