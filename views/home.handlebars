@@ -2,7 +2,7 @@
 
 <h1>Welcome to BarterNow nCoV19</h1>
 
-<div class="give">
+<div id="give">
     <fieldset>
     <legend>Give</legend>
         <div class='cards'>
@@ -16,14 +16,15 @@
     </fieldset>
 </div>
 
-<div class="need">
+<div id="need">
     <fieldset>
     <legend>Need</legend>
         <div class='cards'>
             {{#each itemList}}
                 <div class="card">
-                    <img class="thumbnail" src={{{this.photo}}}>
+                    <img class="thumbnail" src={{this.photo}}>
                     {{this.displayName}}
+                    <input type="hidden" value={{this.name}}>
                 </div>
             {{/each}}
         </div>
