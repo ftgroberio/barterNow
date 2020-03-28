@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 //  Project .js exports
-var   dataStructure = require('./js/dataStructure');
+var   dataStructure = require('./js/dataStructures');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
