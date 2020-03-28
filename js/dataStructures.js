@@ -84,46 +84,30 @@ class User {
     }
 }
 
-let mapData = new Map();
+// TODO: Complete list of items
+var itemsList = [{name: 'toiletPaper', photo: '../public/images/image.jpg'}, {name: 'Clorox', photo: 'path/to/img'}];
 
-/* Haves Map of Maps*/
-let haveToiletPaper = new Map();
+//  Initialization of Maps
+var needsMap = new Map();
+var hasMap = new Map();
 
-/* Needs LinkedList*/
-let needsIsopropyl = new LinkedList();
-
-// Initializing Have's maps
-mapData.set("toiletPaper", haveToiletPaper);
-
-// Initializing Need's linked lists
-mapData.get("toiletPaper").set("isopropyl", needsIsopropyl);
-
-
-// Add node
-mapData.get("toiletPaper").get("isopropyl").add(new Offer(123, 'Cam'));
-mapData.get("toiletPaper").get("isopropyl").add(new Offer(124, 'Ryan'));
-
-// Finding matches
-function findMatch(have, need) {
-    return mapData.get(have).get(need)._length >= 1;
+for (let item in itemsList) {
+    hasMap.set(itemsList[item].name, new LinkedList()); // Could use LL constructor here to create sentry with item data
+    needsMap.set(itemsList[item].name, new LinkedList());
 }
 
-//  Confirm addition
-console.log(findMatch("toiletPaper", "isopropyl"));
+//  Add Users with inventory
+hasMap.get('toiletPaper').add({name: 'Cam', location: 'Texas'});
 
-//  Remove
-mapData.get("toiletPaper").get("isopropyl").remove(123);
 
-// Confirm second match
-console.log(findMatch("toiletPaper", "isopropyl"));
-
-// Confirm complete removal (expect false)
-mapData.get("toiletPaper").get("isopropyl").remove(124);
-console.log(findMatch("toiletPaper", "isopropyl"));
+console.log(hasMap.get('toiletPaper'));
+console.log(hasMap);
+console.log(needsMap);
 
 
 // Exporting Objects
 module.exports = {
     LinkedList: LinkedList,
-
+    needsMap: needsMap,
+    hasMap: hasMap
 };
