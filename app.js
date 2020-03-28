@@ -26,7 +26,7 @@ app.get('/', (req,res) => {
     let context = {};
     context.list = qParams;
     context.type = 'GET';
-    app.render(home);
+    res.render('getpost', context);
 });
 
 //user can post what they have 
