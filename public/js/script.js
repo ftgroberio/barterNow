@@ -49,4 +49,21 @@ function submitForm(event) {
     });
     console.log(data);
 
+    //Generate request
+    let req = new XMLHttpRequest();
+    req.open("POST", "", true);
+
+    req.addEventListener('load', (event,) => {
+        if (req.status >= 200 && req.status < 400) {
+        //    Refresh DOM with new data
+            console.log(req.responseText);
+        }
+        else {
+            console.log(req.status);
+        }
+    });
+    req.setRequestHeader('Content-Type', 'application/json');
+
+    // let payload = JSON.stringify(data);
+    req.send(JSON.stringify(data));
 }

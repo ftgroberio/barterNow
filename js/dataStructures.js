@@ -109,5 +109,6 @@ module.exports = {
     LinkedList: LinkedList,
     needsMap: needsMap,
     hasMap: hasMap,
-    itemsList: itemsList
+    itemsList: itemsList,
+    User: User
 };

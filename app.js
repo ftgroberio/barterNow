@@ -21,34 +21,33 @@ app.use(express.static(path.join(__dirname, '/public')));
 //  Routes
 
 app.get('/', (req,res) => {
-    var qParams = [];
-    for(var p in req.query){
-        context.push({'name': p, 'value':req.query[p]});
-    }
-
     let context = {};
     context.itemList = dataStructure.itemsList;
-    context.list = qParams;
-    context.type = 'GET';
+
     res.render('home', context);
 });
 
 //  user can post what they have
 app.post('/', (req,res) => {
-    var postParams = [];
-    for(var p in req.query){
-        postParams.push({'name':p, 'value':req.query[p]});
+    console.log(req.body);
+    let user = new  dataStructure.User(req.body.name, req.body.location);
+
+    for (let item in req.body.give) {
+        console.log(req.body.give[item]);
+        console.log(dataStructure.hasMap);
+        dataStructure.hasMap.get(req.body.give[item]).add(user);
     }
-    var bodyParams = [];
-    for(var item in req.body){
-        bodyParams.push({'name': item, 'value': req.body[item]});
+
+    for (let item in req.body.need) {
+        dataStructure.needsMap.get(req.body.need[item]).add(user);
     }
 
     let context = {};
+    context.matches = [];
 
-    context.queryList = postParams;
-    context.bodyList = bodyParams;
-    context.type = 'POST';
+    // Replace with matches
+    context.matches.push({name: 'Felipe', location: 'Texas'});
+
     res.send(JSON.stringify(context));
 });
 
