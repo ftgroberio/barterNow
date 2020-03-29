@@ -55,11 +55,17 @@
     <tr>
         <th>Give</th>
         <th>Receive</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Action</th>
     </tr>
     {{#each itemList}}
     <tr>
-        <td> {{{this.displayName}}}</td>
-        <td> {{{this.displayName}}}</td>
+         {{#each giveList}}<td>{{{this.displayName}}}</td>{{/each}}
+        {{#each receiveList}}<td>{{{this.displayName}}}</td>{{/each}}
+        <td> {{{username}}}</td>
+        <td> {{{location}}}</td>
+        <td>{{{action}}}</td>
     </tr>
     {{/each}}
 </table>
