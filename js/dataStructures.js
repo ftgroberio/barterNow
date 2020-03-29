@@ -1,4 +1,5 @@
 const itemsList = require('./itemsList.js');
+const addUserDB = require('./addUserDB.js');
 
 class LinkedList {
     constructor () {
@@ -142,44 +143,8 @@ for (let item in itemsList) {
     needsMap.set(itemsList[item].name, new LinkedList());
 }
 
-//  Add Users with inventory
-hasMap.get('toilet_paper').add({ name: 'Cam', location: 'Texas' });
-hasMap.get('clorox').add({ name: 'Cam', location: 'Texas' });
-needsMap.get('hand_sanitizer').add({ name: 'Cam', location: 'Texas' });
-
-hasMap.get('hand_sanitizer').add({ name: 'Felipe', location: 'Texas' });
-needsMap.get('clorox').add({ name: 'Felipe', location: 'Texas' });
-
-hasMap.get('water').add({ name: 'Lifang', location: 'Texas' });
-hasMap.get('clorox').add({ name: 'Lifang', location: 'Texas' });
-hasMap.get('toilet_paper').add({ name: 'Lifang', location: 'Texas' });
-needsMap.get('toilet_paper').add({ name: 'Lifang', location: 'Texas' });
-
-hasMap.get('gloves').add({ name: 'Ryan', location: 'Texas' });
-hasMap.get('toilet_paper').add({ name: 'Ryan', location: 'Texas' });
-hasMap.get('face_mask').add({ name: 'Ryan', location: 'Texas' });
-needsMap.get('water').add({ name: 'Ryan', location: 'Texas' });
-
-
-function displayUserArray () {
-    toilletUsersArray = hasMap.get('toilet_paper').getAll();
-    console.log(toilletUsersArray.pop().name);
-    console.log(toilletUsersArray.pop().name);
-    console.log(toilletUsersArray.pop().name);
-
-
-}
-
-function findTrade(item,user) {
-    nUsers = hasMap.get(itemsList[item].name)._length;
-    console.log(user.name + " is looking for someone that has " + itemsList[item].displayName + ":");
-    cur = hasMap.get(itemsList[item].name).head;
-    for (let i = 0; i < nUsers; i++) {
-        console.log(cur.data.name);
-        findTrade(0, cur.data);
-        cur = cur.next;
-    }
-}
+addUserDB(itemsList, hasMap, needsMap);
+console.log(hasMap);
 
 
 // Exporting Objects
