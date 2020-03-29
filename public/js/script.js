@@ -56,7 +56,7 @@ function submitForm(event) {
     req.addEventListener('load', (event,) => {
         if (req.status >= 200 && req.status < 400) {
         //    Refresh DOM with new data
-            displayInfo();
+            displayInfo(req);
             console.log(req.responseText);
         }
         else {
@@ -69,13 +69,13 @@ function submitForm(event) {
     req.send(JSON.stringify(data));
 }
 
-function displayInfo(){
+function displayInfo(req){
     let response = JSON.parse(req.responseText);
     document.getElementById('give').textContent = response.give;
     document.getElementById('receive').textContent = response.need;       
-    let userInfo = response.uname.value;
+    let userInfo = response.name.value;
     userInfo.concat("/");
-    userInfo.concat(response.zip.value);
+    userInfo.concat(response.location.value);
     document.getElementById('user').textContent = userInfo;
 }
 

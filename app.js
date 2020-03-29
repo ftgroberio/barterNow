@@ -46,7 +46,7 @@ app.post('/', (req,res) => {
     context.matches = [];
 
     // Replace with matches
-    context.matches.push({name: 'Felipe', location: 'Texas'});
+    context.matches.push({give: 'Clorox', need: 'gloves', name: 'Felipe', location: 'Texas'});
 
     res.send(JSON.stringify(context));
 });
