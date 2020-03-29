@@ -99,7 +99,7 @@ function displayInfo(req){
 
 function insertRow(){
     //find a  table with id="myTable"
-    var table = document.getElementById("myTable");
+    var table = document.getElementById("resultsTable");
     var row = table.insertRow(0);
 
     //insert new cells at the 1st and 2nd positin of the new <tr> element 
