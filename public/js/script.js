@@ -86,20 +86,31 @@ function displayInfo(req){
                 for (let i = 0; i < 4; i++) {
                     cells[i] = row.insertCell(i);
                 }
-                cells[0].textContent = response[h].have;
-                cells[1].textContent = response[h].need[n].item;
+                cells[0].innerHTML =
+                    "<div class='card'>\n" +
+                        "<div class='card'>" +
+                            "<img class='fixedThumbnail' src='" + response[h].have.photo + "'>" + "<br>" +
+                                response[h].have.displayName +
+                        "</div>" +
+                    "</div>";
+                cells[1].innerHTML =
+                    "<div class='card'>\n" +
+                        "<div class='card'>" +
+                            "<img class='fixedThumbnail' src='" + response[h].need[n].item.photo + "'>" + "<br>" +
+                                response[h].need[n].item.displayName +
+                        "</div>" +
+                    "</div>";
                 cells[2].textContent = response[h].need[n].matches[m].name + " / " + response[h].need[n].matches[m].location;
                 cells[3].innerHTML = "<input type='button' value='Accept' onclick=''>";
 
             }
         }
     }
-    // insertRow();
 }
 
 function insertRow(){
     //find a  table with id="myTable"
-    var table = document.getElementById("myTable");
+    var table = document.getElementById("resultsTable");
     var row = table.insertRow(0);
 
     //insert new cells at the 1st and 2nd positin of the new <tr> element 
@@ -120,12 +131,7 @@ function insertRow(){
 }
 
     
-$(document).ready(function(){
-    $("#view2").click(function(){
-        $("div").hide();
-    });
-    
-    $("#view1").click(function(){
-        $("p").show();
-    });
+$("button").on("click", function(){
+    $("#view2").toggleClass('hidden');
+    $("#view1").toggleClass('hidden');
 });

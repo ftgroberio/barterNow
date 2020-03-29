@@ -99,20 +99,28 @@ class User {
     }
 }
 
+function getItem (name) {
+    for (let item in itemsList) {
+        if (itemsList[item].name === name) {
+            return itemsList[item];
+        }
+    }
+}
+
 function findMatches (have, need) {
 
     let possibleMatches = [];
 
     for (let n in need) {
         let found = hasMap.get(need[n]).getAll();
-        if (found.length > 0) possibleMatches.push({item: need[n], matches: found});
+        if (found.length > 0) possibleMatches.push({item: getItem(need[n]), matches: found});
     }
 
 
     let results = [];
 
     for (let h in have) {
-        let curItem = {have: have[h], need: []};
+        let curItem = {have: getItem(have[h]), need: []};
         for (let p in possibleMatches) {
             curItem.need.push(possibleMatches[p]);
             curItem.need[curItem.need.length - 1].matches.filter((user) => {
@@ -173,9 +181,6 @@ function findTrade(item,user) {
     }
 }
 
-// displayUserArray();
-
-//findTrade(1, { name: 'Cam', location: 'Texas', poo: "poo" });
 
 // Exporting Objects
 module.exports = {
