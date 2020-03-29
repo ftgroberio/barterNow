@@ -66,6 +66,7 @@ fieldset {
 table{
     border-collapse: collapse;
     width:100%;
+    display: none;
 }
 
 tr,td,th{
