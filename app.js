@@ -29,7 +29,7 @@ app.get('/', (req,res) => {
 
 //  user can post what they have
 app.post('/', (req,res) => {
-    console.log(req.body);
+    // console.log(req.body);
     let user = new  dataStructure.User(req.body.name, req.body.location);
 
     for (let item in req.body.give) {
@@ -42,10 +42,6 @@ app.post('/', (req,res) => {
 
     let context = {};
     context.matches = dataStructure.findMatches(req.body.give, req.body.need);
-
-    console.log(context.matches);
-    // Replace with matches
-    // context.matches.push({give: 'Clorox', need: 'gloves', name: 'Felipe', location: 'Texas'});
 
     res.send(JSON.stringify(context));
 });

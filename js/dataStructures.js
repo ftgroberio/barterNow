@@ -100,21 +100,7 @@ class User {
 }
 
 function findMatches (have, need) {
-    /*let results = [];
 
-    for (let n in need) {
-        let found = hasMap.get(need[n]).getAll(); // or similar get method
-        results.push({item: need[n].name, matches: found});
-    }
-
-    for (let r in results) {
-        results[r].matches.filter((user) => {
-            for (let h in have) {
-                if (needsMap.get(have[h]).contains(user)) return true;
-            }
-            return false;
-        });
-    }*/
     let possibleMatches = [];
 
     for (let n in need) {
@@ -166,8 +152,6 @@ hasMap.get('toilet_paper').add({ name: 'Ryan', location: 'Texas' });
 hasMap.get('face_mask').add({ name: 'Ryan', location: 'Texas' });
 needsMap.get('water').add({ name: 'Ryan', location: 'Texas' });
 
-//console.log(hasMap.get(itemsList[0].name)._length);
-//console.log(hasMap.get('toilet_paper').contains({name: 'Cam', location: 'Texas'}));
 
 function displayUserArray () {
     toilletUsersArray = hasMap.get('toilet_paper').getAll();
@@ -189,7 +173,7 @@ function findTrade(item,user) {
     }
 }
 
-displayUserArray();
+// displayUserArray();
 
 //findTrade(1, { name: 'Cam', location: 'Texas', poo: "poo" });
 

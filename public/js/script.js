@@ -57,7 +57,6 @@ function submitForm(event) {
         if (req.status >= 200 && req.status < 400) {
         //    Refresh DOM with new data
             console.log(JSON.parse(req.responseText).matches);
-
             displayInfo(req);
         }
         else {
