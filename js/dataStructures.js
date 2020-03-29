@@ -89,14 +89,13 @@ class User {
 }
 
 function findMatches (have, need) {
-    let results = [];
+    /*let results = [];
 
     for (let n in need) {
         let found = hasMap.get(need[n]).getAll(); // or similar get method
         results.push({item: need[n].name, matches: found});
     }
 
-    // If the name in a need
     for (let r in results) {
         results[r].matches.filter((user) => {
             for (let h in have) {
@@ -104,8 +103,31 @@ function findMatches (have, need) {
             }
             return false;
         });
-    }
+    }*/
 
+    let possibleMatches = [];
+
+    for (let n in need) {
+        let found = hasMap.get(need[n]).getAll(); // or similar get method
+        possibleMatches.push({item: need[n].name, matches: found});
+    }
+    /*const reducer = (haveItem, needItem) => {
+        haveItem.push()
+    };*/
+
+    let results = [];
+
+    for (let h in have) {
+        let curItem = {have: have[h].name, need: []};
+        for (let p in possibleMatches) {
+            curItem.need.push(possibleMatches[p]);
+            curItem[curItem.length - 1].matches.filter((user) => {
+                return needsMap.get(have[h]).contains(user);
+            });
+            if (curItem.need.matches.length < 1) curItem.need.pop();
+        }
+        if (curItem.need.length > 0) results.push(curItem);
+    }
     return results;
 }
 
@@ -139,9 +161,9 @@ needsMap.get('water').add({ name: 'Ryan', location: 'Texas' });
 //console.log(hasMap.get(itemsList[0].name)._length);
 
 function findTrade(item) {
-    nUsers = hasMap.get(itemsList[item].name)._length;
+    let nUsers = hasMap.get(itemsList[item].name)._length;
     console.log(nUsers);
-    cur = hasMap.get(itemsList[item].name).head;
+    let cur = hasMap.get(itemsList[item].name).head;
     for (let i = 0; i < nUsers; i++) {
        console.log(cur.data.name);
         cur = cur.next;
