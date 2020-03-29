@@ -56,8 +56,9 @@ function submitForm(event) {
     req.addEventListener('load', (event,) => {
         if (req.status >= 200 && req.status < 400) {
         //    Refresh DOM with new data
+            console.log(JSON.parse(req.responseText).matches);
+
             displayInfo(req);
-            console.log(req.responseText);
         }
         else {
             console.log(req.status);

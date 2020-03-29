@@ -76,7 +76,7 @@ class LinkedList {
         let userArray = [];
 
         while (current) {
-            userArray.push(current);
+            userArray.push(current.data);
             current = current.next;
         }
 
@@ -115,27 +115,24 @@ function findMatches (have, need) {
             return false;
         });
     }*/
-
     let possibleMatches = [];
 
     for (let n in need) {
-        let found = hasMap.get(need[n]).getAll(); // or similar get method
-        possibleMatches.push({item: need[n].name, matches: found});
+        let found = hasMap.get(need[n]).getAll();
+        if (found.length > 0) possibleMatches.push({item: need[n], matches: found});
     }
-    /*const reducer = (haveItem, needItem) => {
-        haveItem.push()
-    };*/
+
 
     let results = [];
 
     for (let h in have) {
-        let curItem = {have: have[h].name, need: []};
+        let curItem = {have: have[h], need: []};
         for (let p in possibleMatches) {
             curItem.need.push(possibleMatches[p]);
-            curItem[curItem.length - 1].matches.filter((user) => {
+            curItem.need[curItem.need.length - 1].matches.filter((user) => {
                 return needsMap.get(have[h]).contains(user);
             });
-            if (curItem.need.matches.length < 1) curItem.need.pop();
+            if (curItem.need.length < 1) curItem.need.pop();
         }
         if (curItem.need.length > 0) results.push(curItem);
     }
@@ -174,9 +171,9 @@ needsMap.get('water').add({ name: 'Ryan', location: 'Texas' });
 
 function displayUserArray () {
     toilletUsersArray = hasMap.get('toilet_paper').getAll();
-    console.log(toilletUsersArray.pop().data.name);
-    console.log(toilletUsersArray.pop().data.name);
-    console.log(toilletUsersArray.pop().data.name);
+    console.log(toilletUsersArray.pop().name);
+    console.log(toilletUsersArray.pop().name);
+    console.log(toilletUsersArray.pop().name);
 
 
 }
