@@ -67,3 +67,22 @@ function submitForm(event) {
     // let payload = JSON.stringify(data);
     req.send(JSON.stringify(data));
 }
+
+document.getElementById('submit').addEventListener('click', displayInfo);
+function displayInfo(){
+    var req = new XMLHttpRequest;
+    req.addEventListener('load', function(){
+        if(req.status >= 200 && req.status < 400){
+            document.getElementById('giveItem').textContent = response.give;
+            document.getElementById('receiveItem').textContent = response.need;
+            document.getElementById('user').textContent = response.uname + response.zip;
+        }
+        else{
+            console.log("Error in network request: " + req.statusText);
+        }
+    });
+    req.send(null);
+    event.preventDefault();
+}
+
+    
