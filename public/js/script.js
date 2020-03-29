@@ -111,7 +111,7 @@ function displayInfo(req){
 
 function insertRow(){
     //find a  table with id="myTable"
-    var table = document.getElementById("myTable");
+    var table = document.getElementById("resultsTable");
     var row = table.insertRow(0);
 
     //insert new cells at the 1st and 2nd positin of the new <tr> element 
@@ -130,4 +130,14 @@ function insertRow(){
     button2.textContent = "Refuse";
     cell4.textContent = button1.textContent.concat(button2.textContent);
 }
+
     
+$("button").on("click", function(){
+    $("#view2").click(function(){
+        $("div").hide();
+    });
+    
+    $("#view1").click(function(){
+        $("div").show();
+    });
+});
