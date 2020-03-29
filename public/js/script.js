@@ -118,4 +118,14 @@ function insertRow(){
     button2.textContent = "Refuse";
     cell4.textContent = button1.textContent.concat(button2.textContent);
 }
+
     
+$(document).ready(function(){
+    $("#view2").click(function(){
+        $("div").hide();
+    });
+    
+    $("#view1").click(function(){
+        $("p").show();
+    });
+});
