@@ -11,10 +11,11 @@ The outbreak of the COVID-19 virus has impacted several aspects of our lives and
 <img src="https://github.com/ftgroberio/barterNow/blob/master/public/images/battery.jpg" width="96">
 <img src="https://github.com/ftgroberio/barterNow/blob/master/public/images/baby_food.jpg" width="96">
 <img src="https://github.com/ftgroberio/barterNow/blob/master/public/images/thermometer.jpg" width="96">
+<img src="https://github.com/ftgroberio/barterNow/blob/master/public/images/hand_sanitizer.jpg" width="96">
 
 ### Contributing 
 
 @yanlifang Lifang Yan <br />
 @CamGrover Cameron Grover <br />
-@fgroberio Felipe Groberio <br />
+@ftgroberio Felipe Groberio <br />
 
