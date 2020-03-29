@@ -106,6 +106,7 @@ needsMap.get('clorox').add({ name: 'Felipe', location: 'Texas' });
 
 hasMap.get('water').add({ name: 'Lifang', location: 'Texas' });
 hasMap.get('clorox').add({ name: 'Lifang', location: 'Texas' });
+hasMap.get('toilet_paper').add({ name: 'Lifang', location: 'Texas' });
 needsMap.get('toilet_paper').add({ name: 'Lifang', location: 'Texas' });
 
 hasMap.get('gloves').add({ name: 'Ryan', location: 'Texas' });
@@ -113,11 +114,21 @@ hasMap.get('toilet_paper').add({ name: 'Ryan', location: 'Texas' });
 hasMap.get('face_mask').add({ name: 'Ryan', location: 'Texas' });
 needsMap.get('water').add({ name: 'Ryan', location: 'Texas' });
 
+//console.log(hasMap.get(itemsList[0].name)._length);
 
+function findTrade(item) {
+    nUsers = hasMap.get(itemsList[item].name)._length;
+    console.log(nUsers);
+    cur = hasMap.get(itemsList[item].name).head;
+    for (let i = 0; i < nUsers; i++) {
+       console.log(cur.data.name);
+        cur = cur.next;
+    }
+}
 //console.log(hasMap.get('toilet_paper').contains({name: 'Cam', location: 'Texas'}));
 //console.log(hasMap);
 //console.log(needsMap);
-console.log(hasMap.get('toilet_paper'));
+findTrade(0);
 
 
 // Exporting Objects
