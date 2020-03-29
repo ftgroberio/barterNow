@@ -143,7 +143,7 @@ for (let item in itemsList) {
     needsMap.set(itemsList[item].name, new LinkedList());
 }
 
-addUserDB(itemsList, hasMap, needsMap);
+addUserDB(hasMap, needsMap);
 console.log(hasMap);
 
 
