@@ -120,12 +120,12 @@ function insertRow(){
 }
 
     
-$(document).ready(function(){
+$("button").on("click", function(){
     $("#view2").click(function(){
         $("div").hide();
     });
     
     $("#view1").click(function(){
-        $("p").show();
+        $("div").show();
     });
 });
