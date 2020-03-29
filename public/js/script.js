@@ -106,7 +106,6 @@ function displayInfo(req){
             }
         }
     }
-    // insertRow();
 }
 
 function insertRow(){
@@ -133,11 +132,6 @@ function insertRow(){
 
     
 $("button").on("click", function(){
-    $("#view2").click(function(){
-        $("div").hide();
-    });
-    
-    $("#view1").click(function(){
-        $("div").show();
-    });
+    $("#view2").toggleClass('hidden');
+    $("#view1").toggleClass('hidden');
 });
