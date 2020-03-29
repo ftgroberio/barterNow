@@ -70,6 +70,8 @@ class LinkedList {
 
         return false;
     }
+
+
 }
 
 class Node {
@@ -86,6 +88,26 @@ class User {
     }
 }
 
+function findMatches (have, need) {
+    let results = [];
+
+    for (let n in need) {
+        let found = hasMap.get(need[n]).getAll(); // or similar get method
+        results.push({item: need[n].name, matches: found});
+    }
+
+    // If the name in a need
+    for (let r in results) {
+        results[r].matches.filter((user) => {
+            for (let h in have) {
+                if (needsMap.get(have[h]).contains(user)) return true;
+            }
+            return false;
+        });
+    }
+
+    return results;
+}
 
 //  Initialization of Maps
 var needsMap = new Map();
@@ -137,5 +159,6 @@ module.exports = {
     needsMap: needsMap,
     hasMap: hasMap,
     itemsList: itemsList,
-    User: User
+    User: User,
+    findMatches: findMatches
 };

@@ -56,6 +56,7 @@ function submitForm(event) {
     req.addEventListener('load', (event,) => {
         if (req.status >= 200 && req.status < 400) {
         //    Refresh DOM with new data
+            displayInfo(req);
             console.log(req.responseText);
         }
         else {
@@ -67,3 +68,37 @@ function submitForm(event) {
     // let payload = JSON.stringify(data);
     req.send(JSON.stringify(data));
 }
+
+function displayInfo(req){
+    let response = JSON.parse(req.responseText);
+    document.getElementById('give').textContent = response.give;
+    document.getElementById('receive').textContent = response.need;       
+    let userInfo = response.name.value;
+    userInfo.concat("/");
+    userInfo.concat(response.location.value);
+    document.getElementById('user').textContent = userInfo;
+    insertRow();
+}
+
+function insertRow(){
+    //find a  table with id="myTable"
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(0);
+
+    //insert new cells at the 1st and 2nd positin of the new <tr> element 
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+
+    //add some text to the new cells
+    cell1.textContent = response.give;
+    cell2.textContent = response.need;
+    cell3.textContent = userInfo;
+    var button1 = document.createElement("button1");
+    var button2 = document.createElement("button2");
+    button1.textContent = "Accept";
+    button2.textContent = "Refuse";
+    cell4.textContent = button1.textContent.concat(button2.textContent);
+}
+    
