@@ -61,8 +61,8 @@
     </tr>
     {{#each itemList}}
     <tr>
-         {{#each giveList}}<td>{{{this.displayName}}}</td>{{/each}}
-        {{#each receiveList}}<td>{{{this.displayName}}}</td>{{/each}}
+        <td>{{{this.giveItem}}}</td>
+        <td>{{{this.receiveItem}}}</td>
         <td> {{{username}}}</td>
         <td> {{{location}}}</td>
         <td>{{{action}}}</td>
