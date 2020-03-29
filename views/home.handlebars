@@ -50,22 +50,32 @@
 <br>
 <br>
 <br>
+
+div><h3 style="color:mediumseagreen">Match Results</h3> 
+<ul>
+    <li><span>Give: </span><span id="giveItem"></span></li>
+    <li><span>Receive:</span><span id="receiveItem"></span></li>
+    <li><span>User/Location: </span><span id="user"></span></li>
+    <li><span type="button">Accept</span></li>
+    </li>
+</ul>
+</div>
+
 <h3>Results Table</h3>
 <table style="width: 100%">
     <tr>
         <th>Give</th>
         <th>Receive</th>
-        <th>Name</th>
-        <th>Location</th>
+        <th>Name/Location</th>
         <th>Action</th>
     </tr>
     
     <tr>
-        <td>{{{giveItem}}}</td>
-        <td>{{{receiveItem}}}</td>
-        <td> {{{username}}}</td>
-        <td> {{{location}}}</td>
-        <td>{{{action}}}</td>
+        <td><span id="giveItem"></span></td>
+        <td><span id="receiveItem"></span></td>
+        <td><span id="user"></span></td>
+        <td><span id="accept"></span></td>
+    </tr>
     </tr>
    
 </table>
