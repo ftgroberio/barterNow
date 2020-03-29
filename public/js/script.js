@@ -79,11 +79,8 @@ function displayInfo(req){
     let table = document.getElementById('resultsTable');
 
     for (let h in response) {
-        console.log(response[h]);
         for (let n in response[h].need) {
-            console.log(response[h].need[n]);
             for (let m in response[h].need[n].matches) {
-                console.log(response[h].need[n].matches[m]);
                 let row = table.insertRow(table.length);
                 let cells = [];
                 for (let i = 0; i < 4; i++) {
@@ -92,17 +89,11 @@ function displayInfo(req){
                 cells[0].textContent = response[h].have;
                 cells[1].textContent = response[h].need[n].item;
                 cells[2].textContent = response[h].need[n].matches[m].name + " / " + response[h].need[n].matches[m].location;
-                let button1 = document.createElement("button1");
-                let button2 = document.createElement("button2");
-                button1.textContent = "Accept";
-                button2.textContent = "Refuse";
-                cells[3].innerHTML = button1.textContent.concat(button2.textContent);
+                cells[3].innerHTML = "<input type='button' value='Accept' onclick=''>";
 
             }
         }
     }
-    console.log(table);
-
     // insertRow();
 }
 
