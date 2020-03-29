@@ -71,6 +71,17 @@ class LinkedList {
         return false;
     }
 
+    getAll() {
+        let current = this.head;
+        let userArray = [];
+
+        while (current) {
+            userArray.push(current);
+            current = current.next;
+        }
+
+        return userArray;
+    }
 
 }
 
@@ -159,21 +170,31 @@ hasMap.get('face_mask').add({ name: 'Ryan', location: 'Texas' });
 needsMap.get('water').add({ name: 'Ryan', location: 'Texas' });
 
 //console.log(hasMap.get(itemsList[0].name)._length);
+//console.log(hasMap.get('toilet_paper').contains({name: 'Cam', location: 'Texas'}));
 
-function findTrade(item) {
-    let nUsers = hasMap.get(itemsList[item].name)._length;
-    console.log(nUsers);
-    let cur = hasMap.get(itemsList[item].name).head;
+function displayUserArray () {
+    toilletUsersArray = hasMap.get('toilet_paper').getAll();
+    console.log(toilletUsersArray.pop().data.name);
+    console.log(toilletUsersArray.pop().data.name);
+    console.log(toilletUsersArray.pop().data.name);
+
+
+}
+
+function findTrade(item,user) {
+    nUsers = hasMap.get(itemsList[item].name)._length;
+    console.log(user.name + " is looking for someone that has " + itemsList[item].displayName + ":");
+    cur = hasMap.get(itemsList[item].name).head;
     for (let i = 0; i < nUsers; i++) {
-       console.log(cur.data.name);
+        console.log(cur.data.name);
+        findTrade(0, cur.data);
         cur = cur.next;
     }
 }
-//console.log(hasMap.get('toilet_paper').contains({name: 'Cam', location: 'Texas'}));
-//console.log(hasMap);
-//console.log(needsMap);
-findTrade(0);
 
+displayUserArray();
+
+//findTrade(1, { name: 'Cam', location: 'Texas', poo: "poo" });
 
 // Exporting Objects
 module.exports = {
