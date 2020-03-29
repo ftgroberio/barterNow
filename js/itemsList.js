@@ -19,7 +19,7 @@ var itemsList = [
     { name: 'diapers',          displayName: 'Diapers',         photo: 'images/diapers.jpg' },
     { name: 'eggs',             displayName: 'Eggs',            photo: 'images/eggs.jpg' },
     { name: 'milk',             displayName: 'Milk',            photo: 'images/milk.jpg' },
-    { name: 'detergent',        displayName: 'Detergent',       photo: 'images/detergent.jpg' },
+    { name: 'detergent',        displayName: 'Detergent',       photo: 'images/laundry_detergent.jpg' },
     { name: 'rice',             displayName: 'Rice',            photo: 'images/rice.jpg' },
     { name: 'thermometer',      displayName: 'Thermometer',     photo: 'images/thermometer.jpg' },
     { name: 'vaseline',         displayName: 'Vaseline',        photo: 'images/vaseline.jpg' },

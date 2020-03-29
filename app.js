@@ -33,8 +33,6 @@ app.post('/', (req,res) => {
     let user = new  dataStructure.User(req.body.name, req.body.location);
 
     for (let item in req.body.give) {
-        console.log(req.body.give[item]);
-        console.log(dataStructure.hasMap);
         dataStructure.hasMap.get(req.body.give[item]).add(user);
     }
 
@@ -43,10 +41,11 @@ app.post('/', (req,res) => {
     }
 
     let context = {};
-    context.matches = [];
+    context.matches = dataStructure.findMatches(req.body.give, req.body.need);
 
+    console.log(context.matches);
     // Replace with matches
-    context.matches.push({give: 'Clorox', need: 'gloves', name: 'Felipe', location: 'Texas'});
+    // context.matches.push({give: 'Clorox', need: 'gloves', name: 'Felipe', location: 'Texas'});
 
     res.send(JSON.stringify(context));
 });
