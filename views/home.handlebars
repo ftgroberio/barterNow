@@ -45,3 +45,21 @@
     </select>
     <input type="submit" onclick="submitForm(event)">
 </form>
+
+
+<br>
+<br>
+<br>
+<h3>Results Table</h3>
+<table style="width: 100%">
+    <tr>
+        <th>Give</th>
+        <th>Receive</th>
+    </tr>
+    {{#each itemList}}
+    <tr>
+        <td> {{{this.displayName}}}</td>
+        <td> {{{this.displayName}}}</td>
+    </tr>
+    {{/each}}
+</table>
