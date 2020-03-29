@@ -71,22 +71,12 @@ function submitForm(event) {
 
 function displayInfo(){
     let response = JSON.parse(req.responseText);
-    req.addEventListener('load', function(){
-        if(req.status >= 200 && req.status < 400){
-            document.getElementById('giveItem').textContent = response.give;
-            document.getElementById('receiveItem').textContent = response.need;
-            let userInfo = response.uname.value;
-            userInfo.concat("/");
-            userInfo.concat(response.zip.value);
-            document.getElementById('user').textContent = userInfo;
-            
-        }
-        else{
-            console.log("Error in network request: " + req.statusText);
-        }
-    });
-    req.send(null);
-    event.preventDefault();
+    document.getElementById('give').textContent = response.give;
+    document.getElementById('receive').textContent = response.need;       
+    let userInfo = response.uname.value;
+    userInfo.concat("/");
+    userInfo.concat(response.zip.value);
+    document.getElementById('user').textContent = userInfo;
 }
 
     
