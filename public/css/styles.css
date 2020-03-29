@@ -63,10 +63,14 @@ fieldset {
     width: 100%;
 }
 
+.hidden {
+    display: none;
+}
+
 table{
     border-collapse: collapse;
     width:100%;
-    //display: none;
+    /*display: none;*/
 }
 
 tr,td,th{

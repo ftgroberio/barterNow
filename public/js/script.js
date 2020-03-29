@@ -3,6 +3,8 @@ const $ = jQuery;
 // Jquery definitions
 let giveCards = $('#give .card');
 let needCards = $('#need .card');
+let view1 = $('#view1');
+let view2 = $('#view2');
 
 
 window.addEventListener('load', () => {
@@ -47,7 +49,7 @@ function submitForm(event) {
     needSelected.each(function () {
         data.need.push($(this).val());
     });
-    console.log(data);
+    // console.log(data);
 
     //Generate request
     let req = new XMLHttpRequest();
@@ -57,6 +59,8 @@ function submitForm(event) {
         if (req.status >= 200 && req.status < 400) {
         //    Refresh DOM with new data
             console.log(JSON.parse(req.responseText).matches);
+            view1.addClass('hidden');
+            view2.removeClass('hidden');
             displayInfo(req);
         }
         else {

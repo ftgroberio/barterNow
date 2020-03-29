@@ -1,81 +1,82 @@
 <h1>Welcome to BarterNow nCoV19</h1>
 
-<div id="give">
-    <fieldset>
-    <legend>Give</legend>
-        <div class='cards'>
-            {{#each itemList}}
-                <div class="card">
-                    <img class="thumbnail" src={{{this.photo}}}>
-                    {{this.displayName}}
-                    <input type="hidden" name="give" value={{this.name}}>
-                </div>
-            {{/each}}
-        </div>
-    </fieldset>
+<div id="view1">
+    <div id="give">
+        <fieldset>
+            <legend>Give</legend>
+            <div class='cards'>
+                {{#each itemList}}
+                    <div class="card">
+                        <img class="thumbnail" src={{{this.photo}}}>
+                        {{this.displayName}}
+                        <input type="hidden" name="give" value={{this.name}}>
+                    </div>
+                {{/each}}
+            </div>
+        </fieldset>
+    </div>
+
+    <div id="need">
+        <fieldset>
+            <legend>Need</legend>
+            <div class='cards'>
+                {{#each itemList}}
+                    <div class="card">
+                        <img class="thumbnail" src={{this.photo}}>
+                        {{{this.displayName}}}
+                        <input type="hidden" name="need" value={{this.name}}>
+                    </div>
+                {{/each}}
+            </div>
+        </fieldset>
+    </div>
+
+    <h2>Enter what you need or what you have</h2>
+
+    <form>
+        <label for="uname">User Name</label>
+        <input type="text" id="uname" name="uname" required>
+        <label for="zip">Zipcode</label>
+        <input type="number" id="zip" name="zip" required>
+        <label for="action">Action: </label>
+        <select id="action" name="action">
+            <option value="give">Give</option>
+            <option value="barter">Barter</option>
+            <option value="need">Need</option>
+        </select>
+        <input type="submit" onclick="submitForm(event)">
+    </form>
 </div>
 
-<div id="need">
-    <fieldset>
-    <legend>Need</legend>
-        <div class='cards'>
-            {{#each itemList}}
-                <div class="card">
-                    <img class="thumbnail" src={{this.photo}}>
-                    {{{this.displayName}}}
-                    <input type="hidden" name="need" value={{this.name}}>
-                </div>
-            {{/each}}
-        </div>
-    </fieldset>
+
+<div id="view2" class="hidden">
+<!--    <h3 style="color:mediumseagreen">Match Results</h3>
+    <ul>
+        <li><span>Give: </span><span id="giveItem"></span></li>
+        <li><span>Receive:</span><span id="receiveItem"></span></li>
+        <li><span>User/Location: </span><span id="user"></span></li>
+        <li><span type="button">Accept</span></li>
+        </li>
+    </ul>-->
+
+    <h3>Results Table</h3>
+    <table style="width: 100%" id="myTable">
+        <tr>
+            <th>Give</th>
+            <th>Receive</th>
+            <th>Name/Location</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td><span id="giveItem"></span></td>
+            <td><span id="receiveItem"></span></td>
+            <td><span id="user"></span></td>
+            <td><input id="act1" type="button" name="decison" value="Accept">
+                <input id="act2" type="button" name="decison" value="Refuse"></td>
+        </tr>
+
+    </table>
 </div>
 
-<h2>Enter what you need or what you have</h2>
 
-<form>
-    <label for="uname">User Name</label>
-    <input type="text" id="uname" name="uname" required>
-    <label for="zip">Zipcode</label>
-    <input type="number" id="zip" name="zip" required>
-    <label for="action">Action: </label>
-    <select id="action" name="action">
-        <option value="give">Give</option>
-        <option value="barter">Barter</option>
-        <option value="need">Need</option>
-    </select>
-    <input type="submit" onclick="submitForm(event)">
-</form>
-
-
-<br>
-<br>
-<br>
-
-<div><h3 style="color:mediumseagreen">Match Results</h3>
-<ul>
-    <li><span>Give: </span><span id="giveItem"></span></li>
-    <li><span>Receive:</span><span id="receiveItem"></span></li>
-    <li><span>User/Location: </span><span id="user"></span></li>
-    <li><span type="button">Accept</span></li>
-    </li>
-</ul>
-</div>
-
-<h3>Results Table</h3>
-<table style="width: 100%" id="myTable">
-    <tr>
-        <th>Give</th>
-        <th>Receive</th>
-        <th>Name/Location</th>
-        <th>Action</th>
-    </tr>
-    
-    <tr>
-        <td><span id="giveItem"></span></td>
-        <td><span id="receiveItem"></span></td>
-        <td><span id="user"></span></td>
-        <td><input id="act1" type="button" name="decison" value="Accept">
-        <input id="act2" type="button" name="decison" value="Refuse"></td>
-    </tr>
-   
-</table>
