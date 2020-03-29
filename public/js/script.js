@@ -56,6 +56,7 @@ function submitForm(event) {
     req.addEventListener('load', (event,) => {
         if (req.status >= 200 && req.status < 400) {
         //    Refresh DOM with new data
+            displayInfo();
             console.log(req.responseText);
         }
         else {
@@ -68,14 +69,17 @@ function submitForm(event) {
     req.send(JSON.stringify(data));
 }
 
-document.getElementById('submit').addEventListener('click', displayInfo);
 function displayInfo(){
-    var req = new XMLHttpRequest;
+    let response = JSON.parse(req.responseText);
     req.addEventListener('load', function(){
         if(req.status >= 200 && req.status < 400){
             document.getElementById('giveItem').textContent = response.give;
             document.getElementById('receiveItem').textContent = response.need;
-            document.getElementById('user').textContent = response.uname + response.zip;
+            let userInfo = response.uname.value;
+            userInfo.concat("/");
+            userInfo.concat(response.zip.value);
+            document.getElementById('user').textContent = userInfo;
+            
         }
         else{
             console.log("Error in network request: " + req.statusText);
