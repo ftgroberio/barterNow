@@ -63,10 +63,18 @@ fieldset {
     width: 100%;
 }
 
+.fixedThumbnail {
+    width: 100px;
+}
+
 .hidden {
     display: none;
 }
 
+.bottom {
+    position: absolute;
+    bottom: 0;
+}
 table{
     border-collapse: collapse;
     width:100%;
@@ -77,4 +85,10 @@ tr,td,th{
     border:1px solid #dddddd;
     text-align: center;
     padding:5px;
+
+}
+
+td {
+    position: relative;
+    bottom: 0;
 }
