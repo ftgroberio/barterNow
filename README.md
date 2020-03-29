@@ -13,8 +13,8 @@ The outbreak of the COVID-19 virus has impacted several aspects of our lives and
 <img src="https://github.com/ftgroberio/barterNow/blob/master/public/images/thermometer.jpg" width="96">
 
 ### Contributing 
-Felipe Groberio <​fgroberio@oregonstate.edu​> <br />
-Cameron Grover <​groverca@oregonstate.edu​> <br />
-Ryan McKenzie <​mckenzry@oregonstate.edu​> <br />
-Lifang Yan <​yanli@oregonstate.edu​> <br />
+
+@yanlifang Lifang Yan <br />
+@CamGrover Cameron Grover <br />
+@fgroberio Felipe Groberio <br />
 
