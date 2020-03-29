@@ -131,7 +131,13 @@ function insertRow(){
 }
 
     
-$("button").on("click", function(){
+$("#backButton").on("click", function(){
     $("#view2").toggleClass('hidden');
     $("#view1").toggleClass('hidden');
+
+    let table = document.getElementById('resultsTable');
+    let rowCount = table.rows.length;
+    for (let i = (rowCount - 1); i > 0; i--) {
+        table.deleteRow(i);
+    }
 });
