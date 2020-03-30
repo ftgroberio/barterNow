@@ -101,36 +101,26 @@ function displayInfo(req){
                         "</div>" +
                     "</div>";
                 cells[2].textContent = response[h].need[n].matches[m].name + " / " + response[h].need[n].matches[m].location;
-                cells[3].innerHTML = "<input type='button' value='Accept' onclick=''>";
+
+                function returnAccept (response) {
+                    let thisResponse = response;
+                    return function () {
+                        alert(thisResponse[h].need[n].matches[m].name + " lives in " + thisResponse[h].need[n].matches[m].location + ". Go find them!");
+                    }
+                }
+
+                let accept = returnAccept(response);
+                // accept();
+
+                cells[3].innerHTML = "<input type='button' value='Accept' onclick='alert(\"" + response[h].need[n].matches[m].name + " lives in " + response[h].need[n].matches[m].location + ". Go find them!" + "\")'>";
 
             }
         }
     }
 }
 
-function insertRow(){
-    //find a  table with id="myTable"
-    var table = document.getElementById("resultsTable");
-    var row = table.insertRow(0);
 
-    //insert new cells at the 1st and 2nd positin of the new <tr> element 
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
 
-    //add some text to the new cells
-    cell1.textContent = response.give;
-    cell2.textContent = response.need;
-    cell3.textContent = userInfo;
-    var button1 = document.createElement("button1");
-    var button2 = document.createElement("button2");
-    button1.textContent = "Accept";
-    button2.textContent = "Refuse";
-    cell4.textContent = button1.textContent.concat(button2.textContent);
-}
-
-    
 $("#backButton").on("click", function(){
     $("#view2").toggleClass('hidden');
     $("#view1").toggleClass('hidden');

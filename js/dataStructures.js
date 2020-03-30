@@ -144,8 +144,6 @@ for (let item in itemsList) {
 }
 
 addUserDB(hasMap, needsMap);
-console.log(hasMap);
-
 
 // Exporting Objects
 module.exports = {
