@@ -49,7 +49,6 @@ function submitForm(event) {
     needSelected.each(function () {
         data.need.push($(this).val());
     });
-    // console.log(data);
 
     //Generate request
     let req = new XMLHttpRequest();
@@ -58,7 +57,6 @@ function submitForm(event) {
     req.addEventListener('load', (event,) => {
         if (req.status >= 200 && req.status < 400) {
         //    Refresh DOM with new data
-            console.log(JSON.parse(req.responseText).matches);
             view1.addClass('hidden');
             view2.removeClass('hidden');
             displayInfo(req);
@@ -69,7 +67,6 @@ function submitForm(event) {
     });
     req.setRequestHeader('Content-Type', 'application/json');
 
-    // let payload = JSON.stringify(data);
     req.send(JSON.stringify(data));
 }
 
@@ -102,16 +99,6 @@ function displayInfo(req){
                     "</div>";
                 cells[2].textContent = response[h].need[n].matches[m].name + " / " + response[h].need[n].matches[m].location;
 
-                function returnAccept (response) {
-                    let thisResponse = response;
-                    return function () {
-                        alert(thisResponse[h].need[n].matches[m].name + " lives in " + thisResponse[h].need[n].matches[m].location + ". Go find them!");
-                    }
-                }
-
-                let accept = returnAccept(response);
-                // accept();
-
                 cells[3].innerHTML = "<input type='button' value='Accept' onclick='alert(\"" + response[h].need[n].matches[m].name + " lives in " + response[h].need[n].matches[m].location + ". Go find them!" + "\")'>";
 
             }
@@ -130,4 +117,12 @@ $("#backButton").on("click", function(){
     for (let i = (rowCount - 1); i > 0; i--) {
         table.deleteRow(i);
     }
+
+    giveCards.each(function() {
+        $(this).removeClass('selected')
+    });
+
+    needCards.each(function() {
+        $(this).removeClass('selected');
+    });
 });
