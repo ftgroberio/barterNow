@@ -22,8 +22,8 @@ function addUserDB(HASMap,NEEDSMap){
     NEEDSMap.get('diapers').add({ name: 'Laura', location: 'Texas' });
 
     HASMap.get('lysol').add({ name: 'Daniel', location: 'Texas' });
-    HASMap.get('detergente').add({ name: 'Daniel', location: 'Texas' });
-    NEEDSMap.get('batery').add({ name: 'Daniel', location: 'Texas' });
+    HASMap.get('detergent').add({ name: 'Daniel', location: 'Texas' });
+    NEEDSMap.get('battery').add({ name: 'Daniel', location: 'Texas' });
 
     HASMap.get('thermometer').add({ name: 'Hector', location: 'Texas' });
     HASMap.get('clorox_wipes').add({ name: 'Hector', location: 'Texas' });
