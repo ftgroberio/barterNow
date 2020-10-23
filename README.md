@@ -19,4 +19,4 @@ The outbreak of the COVID-19 virus has impacted several aspects of our lives and
 @CamGrover Cameron Grover <br />
 @ftgroberio Felipe Groberio <br />
 
-Icon design by: [ch3rry_c4ndy.03](https://www.instagram.com/ch3rry_c4ndy.03?r=nametag)
+Icon design by: [sun_bl00d.03](https://www.instagram.com/sun_bl00d.03/)
