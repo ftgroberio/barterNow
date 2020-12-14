@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 5554);
+app.set('port', 3000);
 
 //  Public folder
 app.use(express.static(path.join(__dirname, '/public')));
